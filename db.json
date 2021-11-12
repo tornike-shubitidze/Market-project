@@ -1,0 +1,292 @@
+{
+  "categories": [
+    {
+      "name": "Clothings",
+      "icon": "fa-envira",
+      "subCategories": [
+        "Dresses",
+        "Shoes",
+        "Jackets",
+        "Sunglasses",
+        "Sport Wear",
+        "Blazers",
+        "Shirts",
+        "Shorts",
+        "Handbags",
+        "Jwellery",
+        "Swimwear",
+        "Tops",
+        "Flats",
+        "Shoes",
+        "Winter Wear",
+        "Night Suits",
+        "Toys & Games",
+        "Jeans",
+        "Shirts",
+        "Shoes",
+        "School Bags",
+        "Lunch Box",
+        "Footwear",
+        "Wipes",
+        "Sandals",
+        "Shorts",
+        "Dresses",
+        "Jwellery",
+        "Bags",
+        "Night Dress",
+        "Swim Wear",
+        "Toys"
+      ],
+      "containsImage": false,
+      "imageUrl": ""
+    },
+    {
+      "name": "Electronics",
+      "icon": "fa-envira",
+      "subCategories": "Gaming,Laptop Skins,Apple,Dell,Lenovo,Microsoft,Asus,Adapters,Batteries,Cooling Pads,Routers & Modems,CPUs and Processors,PC Gaming Store,Graphics Cards,Components,Webcam,Memory (RAM),Motherboards,Keyboards,Headphones",
+      "containsImage": false,
+      "imageUrl": ""
+    },
+    {
+      "name": "Shoes",
+      "icon": "fa-envira",
+      "subCategories": [
+        "Dresses",
+        "Shoes",
+        "Jackets",
+        "Sunglasses",
+        "Sport Wear",
+        "Blazers",
+        "Shirts",
+        "Shorts",
+        "Handbags",
+        "Jwellery",
+        "Swimwear",
+        "Tops",
+        "Flats",
+        "Shoes",
+        "Winter Wear",
+        "Night Suits",
+        "Toys & Games",
+        "Jeans",
+        "Shirts",
+        "Shoes",
+        "School Bags",
+        "Lunch Box",
+        "Footwear",
+        "Wipes",
+        "Sandals",
+        "Shorts",
+        "Dresses",
+        "Jwellery",
+        "Bags",
+        "Night Dress",
+        "Swim Wear",
+        "Toys"
+      ],
+      "containsImage": false,
+      "imageUrl": ""
+    },
+    {
+      "name": "Watches",
+      "icon": "fa-envira",
+      "subCategories": "Gaming,Laptop Skins,Apple,Dell,Lenovo,Microsoft,Asus,Adapters,Batteries,Cooling Pads,Routers & Modems,CPUs and Processors,PC Gaming Store,Graphics Cards,Components,Webcam,Memory (RAM),Motherboards,Keyboards,Headphones"
+    },
+    {
+      "name": "Jewellery",
+      "icon": "fa-envira",
+      "subCategories": [
+        "Dresses",
+        "Shoes",
+        "Jackets",
+        "Sunglasses",
+        "Sport Wear",
+        "Blazers",
+        "Shirts",
+        "Shorts",
+        "Handbags",
+        "Jwellery",
+        "Swimwear",
+        "Tops",
+        "Flats",
+        "Shoes",
+        "Winter Wear",
+        "Night Suits",
+        "Toys & Games",
+        "Jeans",
+        "Shirts",
+        "Shoes",
+        "School Bags",
+        "Lunch Box",
+        "Footwear",
+        "Wipes",
+        "Sandals",
+        "Shorts",
+        "Dresses",
+        "Jwellery",
+        "Bags",
+        "Night Dress",
+        "Swim Wear",
+        "Toys"
+      ],
+      "containsImage": false,
+      "imageUrl": ""
+    },
+    {
+      "name": "Health and Beauty",
+      "icon": "fa-envira",
+      "subCategories": "Gaming,Laptop Skins,Apple,Dell,Lenovo,Microsoft,Asus,Adapters,Batteries,Cooling Pads,Routers & Modems,CPUs and Processors,PC Gaming Store,Graphics Cards,Components,Webcam,Memory (RAM),Motherboards,Keyboards,Headphones",
+      "containsImage": false,
+      "imageUrl": ""
+    },
+    {
+      "name": "Kids and Babies",
+      "icon": "fa-envira",
+      "subCategories": "",
+      "containsImage": false,
+      "imageUrl": ""
+    },
+    {
+      "name": "Sports",
+      "icon": "fa-envira",
+      "subCategories": "",
+      "containsImage": false,
+      "imageUrl": ""
+    },
+    {
+      "name": "Home and Garden",
+      "icon": "fa-envira",
+      "subCategories": "",
+      "containsImage": false,
+      "imageUrl": ""
+    }
+  ],
+  "New-Products": [],
+  "wide-banners-imgs": [
+    {
+      "url": "assets/images/banners/home-banner1.jpg"
+    },
+    {
+      "url": "assets/images/banners/home-banner3.jpg"
+    },
+    {
+      "url": "assets/images/banners/home-banner2.jpg"
+    }
+  ],
+  "first-slide": [
+    {
+      "url": "assets/images/sliders/01.jpg",
+      "headerText": "Top Brands",
+      "bigText": " New Collections ",
+      "descriptionText": " Lorem ipsum dolor sit amet, consectetur adipisicing elit. ",
+      "status": "active"
+    },
+    {
+      "url": "assets/images/sliders/02.jpg",
+      "headerText": "Spring 2018",
+      "bigText": " Women Fashion ",
+      "descriptionText": " Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit. ",
+      "status": ""
+    }
+  ],
+  "Product-tags": [
+    {
+      "name": "Phone",
+      "status": "",
+      "isActive": true
+    },
+    {
+      "name": "Vest",
+      "status": "active"
+    },
+    {
+      "name": "Smartphone",
+      "status": ""
+    },
+    {
+      "name": "Furniture",
+      "status": ""
+    },
+    {
+      "name": "T-shirt",
+      "status": ""
+    },
+    {
+      "name": "Sweatpants",
+      "status": ""
+    },
+    {
+      "name": "Sneaker",
+      "status": ""
+    },
+    {
+      "name": "Toys",
+      "status": ""
+    },
+    {
+      "name": "Rose",
+      "status": ""
+    }
+  ],
+  "hot-deals": [
+    {
+      "url": "assets/images/hot-deals/p13.jpg ",
+      "hoverUrl": "assets/images/hot-deals/p13_hover.jpg",
+      "discount": " 49% ",
+      "title": " Floral Print Buttoned ",
+      "price": " $600.00 ",
+      "oldPrice": " $800.00 "
+    },
+    {
+      "url": "assets/images/hot-deals/p14.jpg",
+      "hoverUrl": "assets/images/hot-deals/p14_hover.jpg",
+      "discount": " 35% ",
+      "title": " Floral Print Buttoned ",
+      "price": " $300.00 ",
+      "oldPrice": " $450.00 "
+    },
+    {
+      "url": " assets/images/hot-deals/p15.jpg",
+      "hoverUrl": "assets/images/hot-deals/p15_hover.jpg",
+      "discount": " 35% ",
+      "title": " Floral Print Buttoned ",
+      "price": " $500.00 ",
+      "oldPrice": " $700.00 "
+    }
+  ],
+  "special-offer": [
+    {
+      "url1": "assets/images/products/p5.jpg",
+      "url2": "assets/images/products/p9.jpg",
+      "url3": "assets/images/products/p11.jpg",
+      "title1": " Floral Print Buttoned ",
+      "title2": " Floral Print Buttoned ",
+      "title3": " Floral Print Buttoned ",
+      "price1": " $450.99 ",
+      "price2": " $400.99 ",
+      "price3": " $350.99 "
+    },
+    {
+      "url1": "assets/images/products/p15.jpg",
+      "url2": "assets/images/products/p13.jpg",
+      "url3": "assets/images/products/p12.jpg",
+      "title1": " Floral Print Buttoned ",
+      "title2": " Floral Print Buttoned",
+      "title3": " Floral Print Buttoned ",
+      "price1": " $450.99 ",
+      "price2": " $400.99 ",
+      "price3": " $350.99 "
+    },
+    {
+      "url1": "assets/images/products/p1.jpg",
+      "url2": "assets/images/products/p3.jpg",
+      "url3": "assets/images/products/p7.jpg",
+      "title1": "Floral Print Buttoned",
+      "title2": "Floral Print Buttoned",
+      "title3": "Floral Print Buttoned",
+      "price1": " $450.99 ",
+      "price2": " $400.99 ",
+      "price3": " $350.99 "
+    }
+  ]
+}
