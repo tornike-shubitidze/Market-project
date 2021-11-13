@@ -233,7 +233,7 @@
       "url": "assets/images/hot-deals/p13.jpg ",
       "hoverUrl": "assets/images/hot-deals/p13_hover.jpg",
       "discount": " 49% ",
-      "title": " Floral Print Buttoned ",
+      "title": " Floral Print Buttoned",
       "price": " $600.00 ",
       "oldPrice": " $800.00 "
     },
@@ -241,7 +241,7 @@
       "url": "assets/images/hot-deals/p14.jpg",
       "hoverUrl": "assets/images/hot-deals/p14_hover.jpg",
       "discount": " 35% ",
-      "title": " Floral Print Buttoned ",
+      "title": "Floral Print Buttoned",
       "price": " $300.00 ",
       "oldPrice": " $450.00 "
     },
@@ -249,7 +249,7 @@
       "url": " assets/images/hot-deals/p15.jpg",
       "hoverUrl": "assets/images/hot-deals/p15_hover.jpg",
       "discount": " 35% ",
-      "title": " Floral Print Buttoned ",
+      "title": "Floral Print Buttoned",
       "price": " $500.00 ",
       "oldPrice": " $700.00 "
     }
@@ -259,9 +259,9 @@
       "url1": "assets/images/products/p5.jpg",
       "url2": "assets/images/products/p9.jpg",
       "url3": "assets/images/products/p11.jpg",
-      "title1": " Floral Print Buttoned ",
-      "title2": " Floral Print Buttoned ",
-      "title3": " Floral Print Buttoned ",
+      "title1": "Floral Print Buttoned",
+      "title2": "Floral Print Buttoned",
+      "title3": "Floral Print Buttoned",
       "price1": " $450.99 ",
       "price2": " $400.99 ",
       "price3": " $350.99 "
@@ -270,9 +270,9 @@
       "url1": "assets/images/products/p15.jpg",
       "url2": "assets/images/products/p13.jpg",
       "url3": "assets/images/products/p12.jpg",
-      "title1": " Floral Print Buttoned ",
-      "title2": " Floral Print Buttoned",
-      "title3": " Floral Print Buttoned ",
+      "title1": "Floral Print Buttoned",
+      "title2": "Floral Print Buttoned",
+      "title3": "Floral Print Buttoned",
       "price1": " $450.99 ",
       "price2": " $400.99 ",
       "price3": " $350.99 "
@@ -287,6 +287,91 @@
       "price1": " $450.99 ",
       "price2": " $400.99 ",
       "price3": " $350.99 "
+    }
+  ],
+  "special-deals": [
+    {
+      "url1": "assets/images/products/p8.jpg",
+      "url2": "assets/images/products/p5.jpg",
+      "url3": "assets/images/products/p6.jpg",
+      "title1": "Floral Print Buttoned",
+      "title2": "Floral Print Buttoned",
+      "title3": "Floral Print Buttoned",
+      "price1": " $450.99 ",
+      "price2": " $400.99 ",
+      "price3": " $350.99 "
+    },
+    {
+      "url1": "assets/images/products/p8.jpg",
+      "url2": "assets/images/products/p7.jpg",
+      "url3": "assets/images/products/p6.jpg",
+      "title1": "Floral Print Buttoned",
+      "title2": "Floral Print Buttoned",
+      "title3": "Floral Print Buttoned",
+      "price1": " $450.99 ",
+      "price2": " $400.99 ",
+      "price3": " $350.99 "
+    },
+    {
+      "url1": "assets/images/products/p5.jpg",
+      "url2": "assets/images/products/p4.jpg",
+      "url3": "assets/images/products/p13.jpg",
+      "title1": "Floral Print Buttoned",
+      "title2": "Floral Print Buttoned",
+      "title3": "Floral Print Buttoned",
+      "price1": " $450.99 ",
+      "price2": " $400.99 ",
+      "price3": " $350.99 "
+    }
+  ],
+  "featured-products": [
+    {
+      "img1": "assets/images/products/p10.jpg ",
+      "img2": "assets/images/products/p10_hover.jpg ",
+      "title": " Floral Print Buttoned",
+      "price": " $600.00 ",
+      "oldPrice": " $800.00 ",
+      "status": "NEW"
+    },
+    {
+      "img1": "assets/images/products/p2.jpg",
+      "img2": "assets/images/products/p2_hover.jpg",
+      "title": "ბამბაზიის ზედა",
+      "price": " $300.00 ",
+      "oldPrice": " $450.00 ",
+      "status": "NEW"
+    },
+    {
+      "img1": " assets/images/products/p3.jpg",
+      "img2": " assets/images/products/p3_hover.jpg",
+      "title": "ნიანგის ტყავის",
+      "price": " $500.00 ",
+      "oldPrice": " $700.00 ",
+      "status": "HOT"
+    },
+    {
+      "img1": " assets/images/products/p1.jpg",
+      "img2": " assets/images/products/p1_hover.jpg",
+      "title": "მატყლის სვიტრი",
+      "price": " $348.00 ",
+      "oldPrice": " $700.00 ",
+      "status": "HOT"
+    },
+    {
+      "img1": " assets/images/products/p7.jpg",
+      "img2": " assets/images/products/p7_hover.jpg",
+      "title": "სტეკლოს სათვალე",
+      "price": " $268.00 ",
+      "oldPrice": " $450.00 ",
+      "status": "SALE"
+    },
+    {
+      "img1": " assets/images/products/p9.jpg",
+      "img2": " assets/images/products/p9_hover.jpg",
+      "title": "Floral Print Buttoned",
+      "price": " $650.00 ",
+      "oldPrice": " $850.00 ",
+      "status": "SALE"
     }
   ]
 }

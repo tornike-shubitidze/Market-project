@@ -1,10 +1,20 @@
+var state = {
+  printFirstSlideLoaded: false,
+  printSpecialDealsLoaded: false,
+  printHotDealsLoaded: false,
+  printSpecialOfferLoaded: false,
+  printFeaturedProductsLoaded: false
+};
+
 (function () {
   // getCategories();
   getWideBannersImgs();
   printFirstSlide();
   printProductTags();
   printHotDeals();
-  printSpecialOffer()
+  printSpecialOffer();
+  printSpecialDeals();
+  printFeaturedProducts()
 })();
 
 function getCategories() {
@@ -130,227 +140,10 @@ function printFirstSlide() {
               </div>
     `
       slideEl.innerHTML += slideDiv;
-    })
-
-    jQuery(function () {
-      var dragging = true;
-      var owlElementID = "#owl-main";
-
-      function fadeInReset() {
-        if (!dragging) {
-          jQuery(owlElementID + " .caption .fadeIn-1, " + owlElementID + " .caption .fadeIn-2, " + owlElementID + " .caption .fadeIn-3").stop().delay(800).animate({ opacity: 0 }, { duration: 400, easing: "easeInCubic" });
-        }
-        else {
-          jQuery(owlElementID + " .caption .fadeIn-1, " + owlElementID + " .caption .fadeIn-2, " + owlElementID + " .caption .fadeIn-3").css({ opacity: 0 });
-        }
-      }
-
-      function fadeInDownReset() {
-        if (!dragging) {
-          jQuery(owlElementID + " .caption .fadeInDown-1, " + owlElementID + " .caption .fadeInDown-2, " + owlElementID + " .caption .fadeInDown-3").stop().delay(800).animate({ opacity: 0, top: "-15px" }, { duration: 400, easing: "easeInCubic" });
-        }
-        else {
-          jQuery(owlElementID + " .caption .fadeInDown-1, " + owlElementID + " .caption .fadeInDown-2, " + owlElementID + " .caption .fadeInDown-3").css({ opacity: 0, top: "-15px" });
-        }
-      }
-
-      function fadeInUpReset() {
-        if (!dragging) {
-          jQuery(owlElementID + " .caption .fadeInUp-1, " + owlElementID + " .caption .fadeInUp-2, " + owlElementID + " .caption .fadeInUp-3").stop().delay(800).animate({ opacity: 0, top: "15px" }, { duration: 400, easing: "easeInCubic" });
-        }
-        else {
-          $(owlElementID + " .caption .fadeInUp-1, " + owlElementID + " .caption .fadeInUp-2, " + owlElementID + " .caption .fadeInUp-3").css({ opacity: 0, top: "15px" });
-        }
-      }
-
-      function fadeInLeftReset() {
-        if (!dragging) {
-          jQuery(owlElementID + " .caption .fadeInLeft-1, " + owlElementID + " .caption .fadeInLeft-2, " + owlElementID + " .caption .fadeInLeft-3").stop().delay(800).animate({ opacity: 0, left: "15px" }, { duration: 400, easing: "easeInCubic" });
-        }
-        else {
-          jQuery(owlElementID + " .caption .fadeInLeft-1, " + owlElementID + " .caption .fadeInLeft-2, " + owlElementID + " .caption .fadeInLeft-3").css({ opacity: 0, left: "15px" });
-        }
-      }
-
-      function fadeInRightReset() {
-        if (!dragging) {
-          jQuery(owlElementID + " .caption .fadeInRight-1, " + owlElementID + " .caption .fadeInRight-2, " + owlElementID + " .caption .fadeInRight-3").stop().delay(800).animate({ opacity: 0, left: "-15px" }, { duration: 400, easing: "easeInCubic" });
-        }
-        else {
-          jQuery(owlElementID + " .caption .fadeInRight-1, " + owlElementID + " .caption .fadeInRight-2, " + owlElementID + " .caption .fadeInRight-3").css({ opacity: 0, left: "-15px" });
-        }
-      }
-
-      function fadeIn() {
-        jQuery(owlElementID + " .active .caption .fadeIn-1").stop().delay(500).animate({ opacity: 1 }, { duration: 800, easing: "easeOutCubic" });
-        jQuery(owlElementID + " .active .caption .fadeIn-2").stop().delay(700).animate({ opacity: 1 }, { duration: 800, easing: "easeOutCubic" });
-        jQuery(owlElementID + " .active .caption .fadeIn-3").stop().delay(1000).animate({ opacity: 1 }, { duration: 800, easing: "easeOutCubic" });
-      }
-
-      function fadeInDown() {
-        jQuery(owlElementID + " .active .caption .fadeInDown-1").stop().delay(500).animate({ opacity: 1, top: "0" }, { duration: 800, easing: "easeOutCubic" });
-        jQuery(owlElementID + " .active .caption .fadeInDown-2").stop().delay(700).animate({ opacity: 1, top: "0" }, { duration: 800, easing: "easeOutCubic" });
-        jQuery(owlElementID + " .active .caption .fadeInDown-3").stop().delay(1000).animate({ opacity: 1, top: "0" }, { duration: 800, easing: "easeOutCubic" });
-      }
-
-      function fadeInUp() {
-        jQuery(owlElementID + " .active .caption .fadeInUp-1").stop().delay(500).animate({ opacity: 1, top: "0" }, { duration: 800, easing: "easeOutCubic" });
-        jQuery(owlElementID + " .active .caption .fadeInUp-2").stop().delay(700).animate({ opacity: 1, top: "0" }, { duration: 800, easing: "easeOutCubic" });
-        jQuery(owlElementID + " .active .caption .fadeInUp-3").stop().delay(1000).animate({ opacity: 1, top: "0" }, { duration: 800, easing: "easeOutCubic" });
-      }
-
-      function fadeInLeft() {
-        jQuery(owlElementID + " .active .caption .fadeInLeft-1").stop().delay(500).animate({ opacity: 1, left: "0" }, { duration: 800, easing: "easeOutCubic" });
-        jQuery(owlElementID + " .active .caption .fadeInLeft-2").stop().delay(700).animate({ opacity: 1, left: "0" }, { duration: 800, easing: "easeOutCubic" });
-        jQuery(owlElementID + " .active .caption .fadeInLeft-3").stop().delay(1000).animate({ opacity: 1, left: "0" }, { duration: 800, easing: "easeOutCubic" });
-      }
-
-      function fadeInRight() {
-        jQuery(owlElementID + " .active .caption .fadeInRight-1").stop().delay(500).animate({ opacity: 1, left: "0" }, { duration: 800, easing: "easeOutCubic" });
-        jQuery(owlElementID + " .active .caption .fadeInRight-2").stop().delay(700).animate({ opacity: 1, left: "0" }, { duration: 800, easing: "easeOutCubic" });
-        jQuery(owlElementID + " .active .caption .fadeInRight-3").stop().delay(1000).animate({ opacity: 1, left: "0" }, { duration: 800, easing: "easeOutCubic" });
-      }
-
-      jQuery(owlElementID).owlCarousel({
-
-        autoPlay: 5000,
-        stopOnHover: true,
-        navigation: true,
-        pagination: true,
-        singleItem: true,
-        addClassActive: true,
-        transitionStyle: "fade",
-        navigationText: ["<i class='icon fa fa-angle-left'></i>", "<i class='icon fa fa-angle-right'></i>"],
-
-        afterInit: function () {
-          fadeIn();
-          fadeInDown();
-          fadeInUp();
-          fadeInLeft();
-          fadeInRight();
-        },
-
-        afterMove: function () {
-          fadeIn();
-          fadeInDown();
-          fadeInUp();
-          fadeInLeft();
-          fadeInRight();
-        },
-
-        afterUpdate: function () {
-          fadeIn();
-          fadeInDown();
-          fadeInUp();
-          fadeInLeft();
-          fadeInRight();
-        },
-
-        startDragging: function () {
-          dragging = true;
-        },
-
-        afterAction: function () {
-          fadeInReset();
-          fadeInDownReset();
-          fadeInUpReset();
-          fadeInLeftReset();
-          fadeInRightReset();
-          dragging = false;
-        }
-
-      });
-
-      if (jQuery(owlElementID).hasClass("owl-one-item")) {
-        jQuery(owlElementID + ".owl-one-item").data('owlCarousel').destroy();
-      }
-
-      jQuery(owlElementID + ".owl-one-item").owlCarousel({
-        singleItem: true,
-        navigation: false,
-        pagination: false
-      });
-
-      jQuery('.home-owl-carousel').each(function () {
-
-        var owl = $(this);
-        var itemPerLine = owl.data('item');
-        if (!itemPerLine) {
-          itemPerLine = 5;
-        }
-        owl.owlCarousel({
-          items: itemPerLine,
-          itemsDesktop: [1199, 3],
-          itemsTablet: [991, 2],
-          navigation: true,
-          pagination: false,
-
-          navigationText: ["", ""]
-        });
-      });
-
-      jQuery('.homepage-owl-carousel').each(function () {
-
-        var owl = $(this);
-        var itemPerLine = owl.data('item');
-        if (!itemPerLine) {
-          itemPerLine = 4;
-        }
-        owl.owlCarousel({
-          items: itemPerLine,
-          itemsTablet: [991, 2],
-          itemsDesktop: [1199, 3],
-          navigation: true,
-          pagination: false,
-
-          navigationText: ["", ""]
-        });
-      });
-
-      jQuery(".blog-slider").owlCarousel({
-        items: 3,
-        itemsDesktopSmall: [979, 2],
-        itemsDesktop: [1199, 3],
-        navigation: true,
-        slideSpeed: 300,
-        pagination: false,
-        navigationText: ["", ""]
-      });
-
-      jQuery(".best-seller").owlCarousel({
-        items: 3,
-        navigation: true,
-        itemsDesktopSmall: [979, 2],
-        itemsDesktop: [1199, 2],
-        slideSpeed: 300,
-        pagination: false,
-        paginationSpeed: 400,
-        navigationText: ["", ""]
-      });
-
-      jQuery(".brand-slider").owlCarousel({
-        items: 6,
-        navigation: true,
-        slideSpeed: 300,
-        pagination: false,
-        paginationSpeed: 400,
-        navigationText: ["", ""]
-      });
-      jQuery("#advertisement").owlCarousel({
-        items: 1,
-        itemsTablet: [978, 1],
-        itemsDesktopSmall: [979, 1],
-        itemsDesktop: [1199, 1],
-        navigation: true,
-        slideSpeed: 300,
-        pagination: true,
-        paginationSpeed: 400,
-        navigationText: ["", ""]
-      });
-
-
-
     });
+
+    state.printFirstSlideLoaded = true;
+    document.dispatchEvent(new CustomEvent('stateChanged', { detail: state }));
   };
   http.send();
 }
@@ -371,7 +164,6 @@ function printProductTags() {
   };
   http.send();
 }
-
 
 function printHotDeals() {
   const http = new XMLHttpRequest();
@@ -429,22 +221,11 @@ function printHotDeals() {
       dealEl.innerHTML += dealDiv;
     });
 
-
-    jQuery(".sidebar-carousel").owlCarousel({
-      items: 1,
-      itemsTablet: [978, 1],
-      itemsDesktopSmall: [979, 2],
-      itemsDesktop: [1199, 1],
-      navigation: true,
-      slideSpeed: 300,
-      pagination: false,
-      paginationSpeed: 400,
-      navigationText: ["", ""]
-    });
+    state.printHotDealsLoaded = true;
+    document.dispatchEvent(new CustomEvent('stateChanged', { detail: state }));
   };
   http.send();
 }
-
 
 function printSpecialOffer() {
   const http = new XMLHttpRequest();
@@ -519,24 +300,150 @@ function printSpecialOffer() {
       offerEl.innerHTML += offerDiv;
     });
 
-    jQuery(offerEl).owlCarousel({
-      items: 1,
-      itemsTablet: [978, 1],
-      itemsDesktopSmall: [979, 2],
-      itemsDesktop: [1199, 1],
-      navigation: true,
-      slideSpeed: 300,
-      pagination: false,
-      paginationSpeed: 400,
-      navigationText: ["", ""]
+    state.printSpecialOfferLoaded = true;
+    document.dispatchEvent(new CustomEvent('stateChanged', { detail: state }));
+  };
+  http.send();
+}
+
+function printSpecialDeals() {
+  const http = new XMLHttpRequest();
+  http.open('GET', 'http://localhost:3000/special-deals');
+  http.onload = () => {
+    let dealsData = JSON.parse(http.responseText);
+    let dealEl = document.querySelector("#spec-deals");
+
+    dealsData.forEach(deal => {
+      let dealDiv =
+        `<div class="item">
+       <div class="products special-product">
+        <div class="product">
+          <div class="product-micro">
+            <div class="row product-micro-row">
+              <div class="col col-xs-5">
+                <div class="product-image">
+                  <div class="image"> <a href="#"> <img src="${deal.url1}" alt=""> </a></div>
+                </div>          
+              </div>              
+              <div class="col col-xs-7">
+                <div class="product-info">
+                  <h3 class="name"><a href="#">${deal.title1}</a></h3>
+                  <div class="rating rateit-small"></div>
+                  <div class="product-price"> <span class="price"> ${deal.price1} </span> </div>
+                </div>
+              </div>        
+            </div>      
+          </div>        
+        </div>
+        <div class="product">
+          <div class="product-micro">
+            <div class="row product-micro-row">
+              <div class="col col-xs-5">
+                <div class="product-image">
+                  <div class="image"> <a href="#"> <img src="${deal.url2}" alt=""> </a>
+                  </div>
+                </div>          
+              </div>              
+              <div class="col col-xs-7">
+                <div class="product-info">
+                  <h3 class="name"><a href="#">${deal.title2}</a></h3>
+                  <div class="rating rateit-small"></div>
+                  <div class="product-price"> <span class="price"> ${deal.price2} </span> </div>                  
+                </div>
+              </div>        
+            </div>     
+          </div>      
+        </div>
+        <div class="product">
+          <div class="product-micro">
+            <div class="row product-micro-row">
+              <div class="col col-xs-5">
+                <div class="product-image">
+                  <div class="image"> <a href="#"> <img src="${deal.url3}" alt="image">
+                    </a> </div>        
+              </div>                
+              </div>        
+              <div class="col col-xs-7">
+                <div class="product-info">
+                  <h3 class="name"><a href="#">${deal.title3}</a></h3>
+                  <div class="rating rateit-small"></div>
+                  <div class="product-price"> <span class="price"> ${deal.price3} </span> </div>
+                </div>
+              </div>        
+            </div>      
+          </div>
+        </div>
+        </div>
+      </div>
+      `
+      dealEl.innerHTML += dealDiv;
     });
 
+    state.printSpecialDealsLoaded = true;
+    document.dispatchEvent(new CustomEvent('stateChanged', { detail: state }));
   };
   http.send();
 }
 
 
 
+function printFeaturedProducts() {
+  const http = new XMLHttpRequest();
+  http.open('GET', 'http://localhost:3000/featured-products');
+  http.onload = () => {
+    let featuredProductsData = JSON.parse(http.responseText);
+    let featuredProductsEl = document.querySelector(".new-arriavls .owl-carousel");
+
+    featuredProductsData.forEach(product => {
+      let featuredProductDiv =
+        `<div class="item item-carousel">
+        <div class="products">
+          <div class="product">
+            <div class="product-image">
+              <div class="image">
+                <a href="detail.html">
+                  <img src="${product.img1}" alt="">
+                  <img src="${product.img2}" alt="" class="hover-image">
+                </a>
+              </div>
+              <div class="tag new"><span>${product.status}</span></div>
+            </div>
+
+            <div class="product-info text-left">
+              <h3 class="name"><a href="detail.html">${product.title}</a></h3>
+              <div class="rating rateit-small"></div>
+              <div class="description"></div>
+              <div class="product-price"> <span class="price"> ${product.price} </span> <span
+                  class="price-before-discount">${product.oldPrice}</span> </div>
+            </div>
+
+            <div class="cart clearfix animate-effect">
+              <div class="action">
+                <ul class="list-unstyled">
+                  <li class="add-cart-button btn-group">
+                    <button class="btn btn-primary icon" data-toggle="dropdown" type="button"> <i
+                        class="fa fa-shopping-cart"></i> </button>
+                    <button class="btn btn-primary cart-btn" type="button">Add to cart</button>
+                  </li>
+                  <li class="lnk wishlist"> <a class="add-to-cart" href="detail.html" title="Wishlist"> <i
+                        class="icon fa fa-heart"></i> </a> </li>
+                  <li class="lnk"> <a class="add-to-cart" href="detail.html" title="Compare"> <i
+                        class="fa fa-signal" aria-hidden="true"></i> </a> </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      `
+      featuredProductsEl.innerHTML += featuredProductDiv;
+    });
+
+    state.printFeaturedProductsLoaded = true;
+    document.dispatchEvent(new CustomEvent('stateChanged', { detail: state }));
+  };
+  http.send();
+}
 
 
 

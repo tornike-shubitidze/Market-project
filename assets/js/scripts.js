@@ -1,151 +1,246 @@
-jQuery(document).ready(function () {
+document.addEventListener('stateChanged', function (e) {
     "use strict";
 
     /*===================================================================================*/
     /*	OWL CAROUSEL
     /*===================================================================================*/
-    jQuery(function () {
-        var dragging = true;
-        var owlElementID = "#owl-main";
+    if (e.detail.printFirstSlideLoaded) {
+        jQuery(function () {
+            var dragging = true;
+            var owlElementID = "#owl-main";
 
-        function fadeInReset() {
-            if (!dragging) {
-                jQuery(owlElementID + " .caption .fadeIn-1, " + owlElementID + " .caption .fadeIn-2, " + owlElementID + " .caption .fadeIn-3").stop().delay(800).animate({ opacity: 0 }, { duration: 400, easing: "easeInCubic" });
+            function fadeInReset() {
+                if (!dragging) {
+                    jQuery(owlElementID + " .caption .fadeIn-1, " + owlElementID + " .caption .fadeIn-2, " + owlElementID + " .caption .fadeIn-3").stop().delay(800).animate({ opacity: 0 }, { duration: 400, easing: "easeInCubic" });
+                }
+                else {
+                    jQuery(owlElementID + " .caption .fadeIn-1, " + owlElementID + " .caption .fadeIn-2, " + owlElementID + " .caption .fadeIn-3").css({ opacity: 0 });
+                }
             }
-            else {
-                jQuery(owlElementID + " .caption .fadeIn-1, " + owlElementID + " .caption .fadeIn-2, " + owlElementID + " .caption .fadeIn-3").css({ opacity: 0 });
+
+            function fadeInDownReset() {
+                if (!dragging) {
+                    jQuery(owlElementID + " .caption .fadeInDown-1, " + owlElementID + " .caption .fadeInDown-2, " + owlElementID + " .caption .fadeInDown-3").stop().delay(800).animate({ opacity: 0, top: "-15px" }, { duration: 400, easing: "easeInCubic" });
+                }
+                else {
+                    jQuery(owlElementID + " .caption .fadeInDown-1, " + owlElementID + " .caption .fadeInDown-2, " + owlElementID + " .caption .fadeInDown-3").css({ opacity: 0, top: "-15px" });
+                }
             }
-        }
 
-        function fadeInDownReset() {
-            if (!dragging) {
-                jQuery(owlElementID + " .caption .fadeInDown-1, " + owlElementID + " .caption .fadeInDown-2, " + owlElementID + " .caption .fadeInDown-3").stop().delay(800).animate({ opacity: 0, top: "-15px" }, { duration: 400, easing: "easeInCubic" });
+            function fadeInUpReset() {
+                if (!dragging) {
+                    jQuery(owlElementID + " .caption .fadeInUp-1, " + owlElementID + " .caption .fadeInUp-2, " + owlElementID + " .caption .fadeInUp-3").stop().delay(800).animate({ opacity: 0, top: "15px" }, { duration: 400, easing: "easeInCubic" });
+                }
+                else {
+                    $(owlElementID + " .caption .fadeInUp-1, " + owlElementID + " .caption .fadeInUp-2, " + owlElementID + " .caption .fadeInUp-3").css({ opacity: 0, top: "15px" });
+                }
             }
-            else {
-                jQuery(owlElementID + " .caption .fadeInDown-1, " + owlElementID + " .caption .fadeInDown-2, " + owlElementID + " .caption .fadeInDown-3").css({ opacity: 0, top: "-15px" });
+
+            function fadeInLeftReset() {
+                if (!dragging) {
+                    jQuery(owlElementID + " .caption .fadeInLeft-1, " + owlElementID + " .caption .fadeInLeft-2, " + owlElementID + " .caption .fadeInLeft-3").stop().delay(800).animate({ opacity: 0, left: "15px" }, { duration: 400, easing: "easeInCubic" });
+                }
+                else {
+                    jQuery(owlElementID + " .caption .fadeInLeft-1, " + owlElementID + " .caption .fadeInLeft-2, " + owlElementID + " .caption .fadeInLeft-3").css({ opacity: 0, left: "15px" });
+                }
             }
-        }
 
-        function fadeInUpReset() {
-            if (!dragging) {
-                jQuery(owlElementID + " .caption .fadeInUp-1, " + owlElementID + " .caption .fadeInUp-2, " + owlElementID + " .caption .fadeInUp-3").stop().delay(800).animate({ opacity: 0, top: "15px" }, { duration: 400, easing: "easeInCubic" });
+            function fadeInRightReset() {
+                if (!dragging) {
+                    jQuery(owlElementID + " .caption .fadeInRight-1, " + owlElementID + " .caption .fadeInRight-2, " + owlElementID + " .caption .fadeInRight-3").stop().delay(800).animate({ opacity: 0, left: "-15px" }, { duration: 400, easing: "easeInCubic" });
+                }
+                else {
+                    jQuery(owlElementID + " .caption .fadeInRight-1, " + owlElementID + " .caption .fadeInRight-2, " + owlElementID + " .caption .fadeInRight-3").css({ opacity: 0, left: "-15px" });
+                }
             }
-            else {
-                $(owlElementID + " .caption .fadeInUp-1, " + owlElementID + " .caption .fadeInUp-2, " + owlElementID + " .caption .fadeInUp-3").css({ opacity: 0, top: "15px" });
+
+            function fadeIn() {
+                jQuery(owlElementID + " .active .caption .fadeIn-1").stop().delay(500).animate({ opacity: 1 }, { duration: 800, easing: "easeOutCubic" });
+                jQuery(owlElementID + " .active .caption .fadeIn-2").stop().delay(700).animate({ opacity: 1 }, { duration: 800, easing: "easeOutCubic" });
+                jQuery(owlElementID + " .active .caption .fadeIn-3").stop().delay(1000).animate({ opacity: 1 }, { duration: 800, easing: "easeOutCubic" });
             }
-        }
 
-        function fadeInLeftReset() {
-            if (!dragging) {
-                jQuery(owlElementID + " .caption .fadeInLeft-1, " + owlElementID + " .caption .fadeInLeft-2, " + owlElementID + " .caption .fadeInLeft-3").stop().delay(800).animate({ opacity: 0, left: "15px" }, { duration: 400, easing: "easeInCubic" });
+            function fadeInDown() {
+                jQuery(owlElementID + " .active .caption .fadeInDown-1").stop().delay(500).animate({ opacity: 1, top: "0" }, { duration: 800, easing: "easeOutCubic" });
+                jQuery(owlElementID + " .active .caption .fadeInDown-2").stop().delay(700).animate({ opacity: 1, top: "0" }, { duration: 800, easing: "easeOutCubic" });
+                jQuery(owlElementID + " .active .caption .fadeInDown-3").stop().delay(1000).animate({ opacity: 1, top: "0" }, { duration: 800, easing: "easeOutCubic" });
             }
-            else {
-                jQuery(owlElementID + " .caption .fadeInLeft-1, " + owlElementID + " .caption .fadeInLeft-2, " + owlElementID + " .caption .fadeInLeft-3").css({ opacity: 0, left: "15px" });
+
+            function fadeInUp() {
+                jQuery(owlElementID + " .active .caption .fadeInUp-1").stop().delay(500).animate({ opacity: 1, top: "0" }, { duration: 800, easing: "easeOutCubic" });
+                jQuery(owlElementID + " .active .caption .fadeInUp-2").stop().delay(700).animate({ opacity: 1, top: "0" }, { duration: 800, easing: "easeOutCubic" });
+                jQuery(owlElementID + " .active .caption .fadeInUp-3").stop().delay(1000).animate({ opacity: 1, top: "0" }, { duration: 800, easing: "easeOutCubic" });
             }
-        }
 
-        function fadeInRightReset() {
-            if (!dragging) {
-                jQuery(owlElementID + " .caption .fadeInRight-1, " + owlElementID + " .caption .fadeInRight-2, " + owlElementID + " .caption .fadeInRight-3").stop().delay(800).animate({ opacity: 0, left: "-15px" }, { duration: 400, easing: "easeInCubic" });
+            function fadeInLeft() {
+                jQuery(owlElementID + " .active .caption .fadeInLeft-1").stop().delay(500).animate({ opacity: 1, left: "0" }, { duration: 800, easing: "easeOutCubic" });
+                jQuery(owlElementID + " .active .caption .fadeInLeft-2").stop().delay(700).animate({ opacity: 1, left: "0" }, { duration: 800, easing: "easeOutCubic" });
+                jQuery(owlElementID + " .active .caption .fadeInLeft-3").stop().delay(1000).animate({ opacity: 1, left: "0" }, { duration: 800, easing: "easeOutCubic" });
             }
-            else {
-                jQuery(owlElementID + " .caption .fadeInRight-1, " + owlElementID + " .caption .fadeInRight-2, " + owlElementID + " .caption .fadeInRight-3").css({ opacity: 0, left: "-15px" });
+
+            function fadeInRight() {
+                jQuery(owlElementID + " .active .caption .fadeInRight-1").stop().delay(500).animate({ opacity: 1, left: "0" }, { duration: 800, easing: "easeOutCubic" });
+                jQuery(owlElementID + " .active .caption .fadeInRight-2").stop().delay(700).animate({ opacity: 1, left: "0" }, { duration: 800, easing: "easeOutCubic" });
+                jQuery(owlElementID + " .active .caption .fadeInRight-3").stop().delay(1000).animate({ opacity: 1, left: "0" }, { duration: 800, easing: "easeOutCubic" });
             }
-        }
 
-        function fadeIn() {
-            jQuery(owlElementID + " .active .caption .fadeIn-1").stop().delay(500).animate({ opacity: 1 }, { duration: 800, easing: "easeOutCubic" });
-            jQuery(owlElementID + " .active .caption .fadeIn-2").stop().delay(700).animate({ opacity: 1 }, { duration: 800, easing: "easeOutCubic" });
-            jQuery(owlElementID + " .active .caption .fadeIn-3").stop().delay(1000).animate({ opacity: 1 }, { duration: 800, easing: "easeOutCubic" });
-        }
+            jQuery(owlElementID).owlCarousel({
 
-        function fadeInDown() {
-            jQuery(owlElementID + " .active .caption .fadeInDown-1").stop().delay(500).animate({ opacity: 1, top: "0" }, { duration: 800, easing: "easeOutCubic" });
-            jQuery(owlElementID + " .active .caption .fadeInDown-2").stop().delay(700).animate({ opacity: 1, top: "0" }, { duration: 800, easing: "easeOutCubic" });
-            jQuery(owlElementID + " .active .caption .fadeInDown-3").stop().delay(1000).animate({ opacity: 1, top: "0" }, { duration: 800, easing: "easeOutCubic" });
-        }
+                autoPlay: 5000,
+                stopOnHover: true,
+                navigation: true,
+                pagination: true,
+                singleItem: true,
+                addClassActive: true,
+                transitionStyle: "fade",
+                navigationText: ["<i class='icon fa fa-angle-left'></i>", "<i class='icon fa fa-angle-right'></i>"],
 
-        function fadeInUp() {
-            jQuery(owlElementID + " .active .caption .fadeInUp-1").stop().delay(500).animate({ opacity: 1, top: "0" }, { duration: 800, easing: "easeOutCubic" });
-            jQuery(owlElementID + " .active .caption .fadeInUp-2").stop().delay(700).animate({ opacity: 1, top: "0" }, { duration: 800, easing: "easeOutCubic" });
-            jQuery(owlElementID + " .active .caption .fadeInUp-3").stop().delay(1000).animate({ opacity: 1, top: "0" }, { duration: 800, easing: "easeOutCubic" });
-        }
+                afterInit: function () {
+                    fadeIn();
+                    fadeInDown();
+                    fadeInUp();
+                    fadeInLeft();
+                    fadeInRight();
+                },
 
-        function fadeInLeft() {
-            jQuery(owlElementID + " .active .caption .fadeInLeft-1").stop().delay(500).animate({ opacity: 1, left: "0" }, { duration: 800, easing: "easeOutCubic" });
-            jQuery(owlElementID + " .active .caption .fadeInLeft-2").stop().delay(700).animate({ opacity: 1, left: "0" }, { duration: 800, easing: "easeOutCubic" });
-            jQuery(owlElementID + " .active .caption .fadeInLeft-3").stop().delay(1000).animate({ opacity: 1, left: "0" }, { duration: 800, easing: "easeOutCubic" });
-        }
+                afterMove: function () {
+                    fadeIn();
+                    fadeInDown();
+                    fadeInUp();
+                    fadeInLeft();
+                    fadeInRight();
+                },
 
-        function fadeInRight() {
-            jQuery(owlElementID + " .active .caption .fadeInRight-1").stop().delay(500).animate({ opacity: 1, left: "0" }, { duration: 800, easing: "easeOutCubic" });
-            jQuery(owlElementID + " .active .caption .fadeInRight-2").stop().delay(700).animate({ opacity: 1, left: "0" }, { duration: 800, easing: "easeOutCubic" });
-            jQuery(owlElementID + " .active .caption .fadeInRight-3").stop().delay(1000).animate({ opacity: 1, left: "0" }, { duration: 800, easing: "easeOutCubic" });
-        }
+                afterUpdate: function () {
+                    fadeIn();
+                    fadeInDown();
+                    fadeInUp();
+                    fadeInLeft();
+                    fadeInRight();
+                },
 
-        jQuery(owlElementID).owlCarousel({
+                startDragging: function () {
+                    dragging = true;
+                },
 
-            autoPlay: 5000,
-            stopOnHover: true,
+                afterAction: function () {
+                    fadeInReset();
+                    fadeInDownReset();
+                    fadeInUpReset();
+                    fadeInLeftReset();
+                    fadeInRightReset();
+                    dragging = false;
+                }
+
+            });
+
+            if (jQuery(owlElementID).hasClass("owl-one-item")) {
+                jQuery(owlElementID + ".owl-one-item").data('owlCarousel').destroy();
+            }
+
+            jQuery(owlElementID + ".owl-one-item").owlCarousel({
+                singleItem: true,
+                navigation: false,
+                pagination: false
+            });
+
+
+
+
+
+            jQuery('.homepage-owl-carousel').each(function () {
+
+                var owl = $(this);
+                var itemPerLine = owl.data('item');
+                if (!itemPerLine) {
+                    itemPerLine = 4;
+                }
+                owl.owlCarousel({
+                    items: itemPerLine,
+                    itemsTablet: [991, 2],
+                    itemsDesktop: [1199, 3],
+                    navigation: true,
+                    pagination: false,
+
+                    navigationText: ["", ""]
+                });
+            });
+
+            jQuery(".blog-slider").owlCarousel({
+                items: 3,
+                itemsDesktopSmall: [979, 2],
+                itemsDesktop: [1199, 3],
+                navigation: true,
+                slideSpeed: 300,
+                pagination: false,
+                navigationText: ["", ""]
+            });
+
+            jQuery(".best-seller").owlCarousel({
+                items: 3,
+                navigation: true,
+                itemsDesktopSmall: [979, 2],
+                itemsDesktop: [1199, 2],
+                slideSpeed: 300,
+                pagination: false,
+                paginationSpeed: 400,
+                navigationText: ["", ""]
+            });
+
+
+
+            jQuery(".brand-slider").owlCarousel({
+                items: 6,
+                navigation: true,
+                slideSpeed: 300,
+                pagination: false,
+                paginationSpeed: 400,
+                navigationText: ["", ""]
+            });
+            jQuery("#advertisement").owlCarousel({
+                items: 1,
+                itemsTablet: [978, 1],
+                itemsDesktopSmall: [979, 1],
+                itemsDesktop: [1199, 1],
+                navigation: true,
+                slideSpeed: 300,
+                pagination: true,
+                paginationSpeed: 400,
+                navigationText: ["", ""]
+            });
+        });
+    }
+
+
+
+    if (e.detail.printHotDealsLoaded && e.detail.printSpecialOfferLoaded && e.detail.printSpecialDealsLoaded) {
+        jQuery(".sidebar-carousel").owlCarousel({
+            items: 1,
+            itemsTablet: [978, 1],
+            itemsDesktopSmall: [979, 2],
+            itemsDesktop: [1199, 1],
             navigation: true,
-            pagination: true,
-            singleItem: true,
-            addClassActive: true,
-            transitionStyle: "fade",
-            navigationText: ["<i class='icon fa fa-angle-left'></i>", "<i class='icon fa fa-angle-right'></i>"],
-
-            afterInit: function () {
-                fadeIn();
-                fadeInDown();
-                fadeInUp();
-                fadeInLeft();
-                fadeInRight();
-            },
-
-            afterMove: function () {
-                fadeIn();
-                fadeInDown();
-                fadeInUp();
-                fadeInLeft();
-                fadeInRight();
-            },
-
-            afterUpdate: function () {
-                fadeIn();
-                fadeInDown();
-                fadeInUp();
-                fadeInLeft();
-                fadeInRight();
-            },
-
-            startDragging: function () {
-                dragging = true;
-            },
-
-            afterAction: function () {
-                fadeInReset();
-                fadeInDownReset();
-                fadeInUpReset();
-                fadeInLeftReset();
-                fadeInRightReset();
-                dragging = false;
-            }
-
+            slideSpeed: 300,
+            pagination: false,
+            paginationSpeed: 400,
+            navigationText: ["", ""]
         });
 
-        if (jQuery(owlElementID).hasClass("owl-one-item")) {
-            jQuery(owlElementID + ".owl-one-item").data('owlCarousel').destroy();
-        }
+        //   RATING 
 
-        jQuery(owlElementID + ".owl-one-item").owlCarousel({
-            singleItem: true,
-            navigation: false,
-            pagination: false
+        jQuery(function () {
+            jQuery('.rating').rateit({ max: 5, step: 1, value: 4, resetable: false, readonly: true });
         });
 
+        // jQuery(function () {
+        //     jQuery('#spec-offer .rating').rateit({ max: 5, step: 1, value: 4, resetable: false, readonly: true });
+        // });
+
+        // #spec-deals
+    }
 
 
-
+    if (e.detail.printFeaturedProductsLoaded) {
         jQuery('.home-owl-carousel').each(function () {
 
             var owl = $(this);
@@ -163,100 +258,7 @@ jQuery(document).ready(function () {
                 navigationText: ["", ""]
             });
         });
-
-        jQuery('.homepage-owl-carousel').each(function () {
-
-            var owl = $(this);
-            var itemPerLine = owl.data('item');
-            if (!itemPerLine) {
-                itemPerLine = 4;
-            }
-            owl.owlCarousel({
-                items: itemPerLine,
-                itemsTablet: [991, 2],
-                itemsDesktop: [1199, 3],
-                navigation: true,
-                pagination: false,
-
-                navigationText: ["", ""]
-            });
-        });
-
-        jQuery(".blog-slider").owlCarousel({
-            items: 3,
-            itemsDesktopSmall: [979, 2],
-            itemsDesktop: [1199, 3],
-            navigation: true,
-            slideSpeed: 300,
-            pagination: false,
-            navigationText: ["", ""]
-        });
-
-        jQuery(".best-seller").owlCarousel({
-            items: 3,
-            navigation: true,
-            itemsDesktopSmall: [979, 2],
-            itemsDesktop: [1199, 2],
-            slideSpeed: 300,
-            pagination: false,
-            paginationSpeed: 400,
-            navigationText: ["", ""]
-        });
-
-        jQuery(".sidebar-carousel").owlCarousel({
-            items: 1,
-            itemsTablet: [978, 1],
-            itemsDesktopSmall: [979, 2],
-            itemsDesktop: [1199, 1],
-            navigation: true,
-            slideSpeed: 300,
-            pagination: false,
-            paginationSpeed: 400,
-            navigationText: ["", ""]
-        });
-
-        jQuery(".brand-slider").owlCarousel({
-            items: 6,
-            navigation: true,
-            slideSpeed: 300,
-            pagination: false,
-            paginationSpeed: 400,
-            navigationText: ["", ""]
-        });
-        jQuery("#advertisement").owlCarousel({
-            items: 1,
-            itemsTablet: [978, 1],
-            itemsDesktopSmall: [979, 1],
-            itemsDesktop: [1199, 1],
-            navigation: true,
-            slideSpeed: 300,
-            pagination: true,
-            paginationSpeed: 400,
-            navigationText: ["", ""]
-        });
-
-
-
-    });
-
-    /*===================================================================================*/
-    /*  LAZY LOAD IMAGES USING ECHO
-    /*===================================================================================*/
-    jQuery(function () {
-        echo.init({
-            offset: 100,
-            throttle: 250,
-            unload: false
-        });
-    });
-
-    /*===================================================================================*/
-    /*  RATING
-    /*===================================================================================*/
-
-    jQuery(function () {
-        jQuery('.rating').rateit({ max: 5, step: 1, value: 4, resetable: false, readonly: true });
-    });
+    }
 
     /*===================================================================================*/
     /* PRICE SLIDER
