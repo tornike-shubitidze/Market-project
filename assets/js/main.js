@@ -3,7 +3,8 @@ var state = {
   printSpecialDealsLoaded: false,
   printHotDealsLoaded: false,
   printSpecialOfferLoaded: false,
-  printFeaturedProductsLoaded: false
+  printFeaturedProductsLoaded: false,
+  printBlogsLoaded: false
 };
 
 (function () {
@@ -14,7 +15,8 @@ var state = {
   printHotDeals();
   printSpecialOffer();
   printSpecialDeals();
-  printFeaturedProducts()
+  printFeaturedProducts();
+  printBlogs()
 })();
 
 function getCategories() {
@@ -440,6 +442,40 @@ function printFeaturedProducts() {
     });
 
     state.printFeaturedProductsLoaded = true;
+    document.dispatchEvent(new CustomEvent('stateChanged', { detail: state }));
+  };
+  http.send();
+}
+
+
+function printBlogs() {
+  const http = new XMLHttpRequest();
+  http.open('GET', 'http://localhost:3000/blogs');
+  http.onload = () => {
+    let blogsData = JSON.parse(http.responseText);
+    let blogsEl = document.querySelector(".blog-slider");
+
+    blogsData.forEach(blog => {
+      let blogDiv =
+        `<div class="item">
+        <div class="blog-post">
+          <div class="blog-post-image">
+            <div class="image"> <a href="blog.html"><img src="${blog.img}"
+                  ></a> </div>
+          </div>                   
+
+          <div class="blog-post-info text-left">
+            <h3 class="name"><a href="#">${blog.title}</a></h3>
+            <span class="info">${blog.author} &nbsp;|&nbsp; ${blog.date} </span>
+            <p class="text">${blog.description}.</p>
+          </div>                   
+        </div>                  
+      </div>              
+      `
+      blogsEl.innerHTML += blogDiv;
+    });
+
+    state.printBlogsLoaded = true;
     document.dispatchEvent(new CustomEvent('stateChanged', { detail: state }));
   };
   http.send();

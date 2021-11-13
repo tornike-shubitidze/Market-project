@@ -166,15 +166,6 @@ document.addEventListener('stateChanged', function (e) {
                 });
             });
 
-            jQuery(".blog-slider").owlCarousel({
-                items: 3,
-                itemsDesktopSmall: [979, 2],
-                itemsDesktop: [1199, 3],
-                navigation: true,
-                slideSpeed: 300,
-                pagination: false,
-                navigationText: ["", ""]
-            });
 
             jQuery(".best-seller").owlCarousel({
                 items: 3,
@@ -257,6 +248,20 @@ document.addEventListener('stateChanged', function (e) {
 
                 navigationText: ["", ""]
             });
+        });
+    }
+
+
+    if (e.detail.printBlogsLoaded) {
+
+        jQuery(".blog-slider").owlCarousel({
+            items: 3,
+            itemsDesktopSmall: [979, 2],
+            itemsDesktop: [1199, 3],
+            navigation: true,
+            slideSpeed: 300,
+            pagination: false,
+            navigationText: ["", ""]
         });
     }
 

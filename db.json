@@ -373,5 +373,42 @@
       "oldPrice": " $850.00 ",
       "status": "SALE"
     }
+  ],
+  "blogs": [
+    {
+      "title": "როგორ გავირჭოთ ტრაკში პერო 💅",
+      "img": "assets/images/blog-post/blog_big_01.jpg",
+      "author": "By Jone Doe ",
+      "date": "21 March 2016",
+      "description": "Sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem."
+    },
+    {
+      "title": "დიმპიტაური ზაურიიი ",
+      "img": "assets/images/blog-post/blog_big_02.jpg",
+      "author": "By Tornike Shubitidze ",
+      "date": "21 March 2016",
+      "description": "Sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem."
+    },
+    {
+      "title": "ვეშოლკა თუ საკიდი? სინამდვილეში ერთი ხუია 😆",
+      "img": "assets/images/blog-post/blog_big_03.jpg",
+      "author": "By Anano Shubitidze ",
+      "date": "21 March 2016",
+      "description": "Sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem."
+    },
+    {
+      "title": "Voluptatem accusantium doloremque laudantium",
+      "img": "assets/images/blog-post/blog_big_01.jpg",
+      "author": "By Jone Doe ",
+      "date": "21 March 2016",
+      "description": "Sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem."
+    },
+    {
+      "title": "Voluptatem accusantium doloremque laudantium",
+      "img": "assets/images/blog-post/blog_big_02.jpg",
+      "author": "By Jone Doe ",
+      "date": "21 March 2016",
+      "description": "Sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem."
+    }
   ]
 }
