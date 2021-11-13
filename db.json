@@ -192,8 +192,7 @@
   "Product-tags": [
     {
       "name": "Phone",
-      "status": "",
-      "isActive": true
+      "status": ""
     },
     {
       "name": "Vest",
@@ -383,7 +382,7 @@
       "description": "Sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem."
     },
     {
-      "title": "დიმპიტაური ზაურიიი ",
+      "title": "მოდა არა ისა 😁 ",
       "img": "assets/images/blog-post/blog_big_02.jpg",
       "author": "By Tornike Shubitidze ",
       "date": "21 March 2016",
@@ -409,6 +408,106 @@
       "author": "By Jone Doe ",
       "date": "21 March 2016",
       "description": "Sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem."
+    }
+  ],
+  "electronics-digital": [
+    "Computers",
+    "Air Condtion",
+    "Mobile Phones",
+    "Camera",
+    "Television",
+    "Sound & Speakers",
+    "Games & Audio Music",
+    "Digital Watches",
+    "Washing Machines",
+    "Office Electronics"
+  ],
+  "electronics-digital-slide": [
+    {
+      "img1": "assets/images/products/p13.jpg ",
+      "img2": "assets/images/products/p13_hover.jpg ",
+      "title": " Floral Print Buttoned",
+      "price": " $600.00 ",
+      "oldPrice": " $800.00 ",
+      "status": "HOT"
+    },
+    {
+      "img1": "assets/images/products/p15.jpg",
+      "img2": "assets/images/products/p15_hover.jpg",
+      "title": "მაიჩნი ტანსაცმელი",
+      "price": " $300.00 ",
+      "oldPrice": " $450.00 ",
+      "status": "NEW"
+    },
+    {
+      "img1": " assets/images/products/p10.jpg",
+      "img2": " assets/images/products/p10_hover.jpg",
+      "title": "Gurian Hat",
+      "price": " $500.00 ",
+      "oldPrice": " $700.00 ",
+      "status": "SALE"
+    },
+    {
+      "img1": " assets/images/products/p11.jpg",
+      "img2": " assets/images/products/p11_hover.jpg",
+      "title": "ტყაპუჭი",
+      "price": " $348.00 ",
+      "oldPrice": " $700.00 ",
+      "status": "HOT"
+    },
+    {
+      "img1": " assets/images/products/p8.jpg",
+      "img2": " assets/images/products/p8_hover.jpg",
+      "title": "თეთრი კალოში",
+      "price": " $408.00 ",
+      "oldPrice": " $450.00 ",
+      "status": "NEW"
+    },
+    {
+      "img1": " assets/images/products/p7.jpg",
+      "img2": " assets/images/products/p7_hover.jpg",
+      "title": "სტეკლოს სათვალე",
+      "price": " $268.00 ",
+      "oldPrice": " $450.00 ",
+      "status": "NEW"
+    }
+  ],
+  "info-boxes": [
+    {
+      "title": "We ship worldwide",
+      "iconClass": "icon-truck"
+    },
+    {
+      "title": "call +1 800 789 0000",
+      "iconClass": "icon-support"
+    },
+    {
+      "title": "Money Back Guarantee",
+      "iconClass": "icon-money"
+    },
+    {
+      "title": "30 days return",
+      "iconClass": "icon-return"
+    }
+  ],
+  "clients": [
+    {
+      "img": "assets/images/testimonials/member1.png",
+      "author": "Jone Doe ",
+      "company": "Abc Company",
+      "description": "Vtae sodales aliq uam morbi non sem lacus port mollis. Nunc condime tum metus eud molest sed consectetuer. Sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat."
+    },
+    {
+      "img": "assets/images/testimonials/member3.png",
+      "author": "Stephen Doe ",
+      "company": "Xperia Designs",
+      "description": "Vtae sodales aliq uam morbi non sem lacus port mollis. Nunc condime tum metus eud molest sed consectetuer. Sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat."
+    },
+    {
+      "img": "assets/images/testimonials/member2.png",
+      "author": "Saraha Smith",
+      "company": "Datsun",
+      "description": "Vtae sodales aliq uam morbi non sem lacus port mollis. Nunc condime tum metus eud molest sed consectetuer. Sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat."
     }
   ]
 }

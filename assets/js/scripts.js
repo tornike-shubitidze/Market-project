@@ -146,27 +146,6 @@ document.addEventListener('stateChanged', function (e) {
 
 
 
-
-
-            jQuery('.homepage-owl-carousel').each(function () {
-
-                var owl = $(this);
-                var itemPerLine = owl.data('item');
-                if (!itemPerLine) {
-                    itemPerLine = 4;
-                }
-                owl.owlCarousel({
-                    items: itemPerLine,
-                    itemsTablet: [991, 2],
-                    itemsDesktop: [1199, 3],
-                    navigation: true,
-                    pagination: false,
-
-                    navigationText: ["", ""]
-                });
-            });
-
-
             jQuery(".best-seller").owlCarousel({
                 items: 3,
                 navigation: true,
@@ -179,30 +158,18 @@ document.addEventListener('stateChanged', function (e) {
             });
 
 
-
-            jQuery(".brand-slider").owlCarousel({
-                items: 6,
-                navigation: true,
-                slideSpeed: 300,
-                pagination: false,
-                paginationSpeed: 400,
-                navigationText: ["", ""]
-            });
-            jQuery("#advertisement").owlCarousel({
-                items: 1,
-                itemsTablet: [978, 1],
-                itemsDesktopSmall: [979, 1],
-                itemsDesktop: [1199, 1],
-                navigation: true,
-                slideSpeed: 300,
-                pagination: true,
-                paginationSpeed: 400,
-                navigationText: ["", ""]
-            });
         });
     }
 
 
+    jQuery(".brand-slider").owlCarousel({
+        items: 6,
+        navigation: true,
+        slideSpeed: 300,
+        pagination: false,
+        paginationSpeed: 400,
+        navigationText: ["", ""]
+    });
 
     if (e.detail.printHotDealsLoaded && e.detail.printSpecialOfferLoaded && e.detail.printSpecialDealsLoaded) {
         jQuery(".sidebar-carousel").owlCarousel({
@@ -265,6 +232,25 @@ document.addEventListener('stateChanged', function (e) {
         });
     }
 
+
+    if (e.detail.printElectronicsAndDigitalSlideLoaded) {
+        jQuery('.homepage-owl-carousel').each(function () {
+            var owl = $(this);
+            var itemPerLine = owl.data('item');
+            if (!itemPerLine) {
+                itemPerLine = 4;
+            }
+            owl.owlCarousel({
+                items: itemPerLine,
+                itemsTablet: [991, 2],
+                itemsDesktop: [1199, 3],
+                navigation: true,
+                pagination: false,
+                navigationText: ["", ""]
+            });
+        });
+    }
+
     /*===================================================================================*/
     /* PRICE SLIDER
     /*===================================================================================*/
@@ -278,9 +264,7 @@ document.addEventListener('stateChanged', function (e) {
                 step: 10,
                 value: [200, 500],
                 handle: "square"
-
             });
-
         }
 
     });
@@ -289,6 +273,22 @@ document.addEventListener('stateChanged', function (e) {
     /*===================================================================================*/
     /* SINGLE PRODUCT GALLERY
     /*===================================================================================*/
+
+    if (e.detail.printClientsSlideLoaded) {
+        jQuery("#advertisement").owlCarousel({
+            items: 1,
+            itemsTablet: [978, 1],
+            itemsDesktopSmall: [979, 1],
+            itemsDesktop: [1199, 1],
+            navigation: true,
+            slideSpeed: 300,
+            pagination: true,
+            paginationSpeed: 400,
+            navigationText: ["", ""]
+        });
+    }
+
+
     jQuery(function () {
         jQuery('#owl-single-product').owlCarousel({
             items: 1,

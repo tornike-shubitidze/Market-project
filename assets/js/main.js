@@ -4,7 +4,10 @@ var state = {
   printHotDealsLoaded: false,
   printSpecialOfferLoaded: false,
   printFeaturedProductsLoaded: false,
-  printBlogsLoaded: false
+  printBlogsLoaded: false,
+  electronicsAndDigital: false,
+  printElectronicsAndDigitalSlideLoaded: false,
+  printClientsSlideLoaded: false
 };
 
 (function () {
@@ -16,7 +19,11 @@ var state = {
   printSpecialOffer();
   printSpecialDeals();
   printFeaturedProducts();
-  printBlogs()
+  printBlogs();
+  printElectronicsAndDigital();
+  printElectronicsAndDigitalSlide();
+  printInfoBoxes();
+  printClientsSlide();
 })();
 
 function getCategories() {
@@ -237,68 +244,8 @@ function printSpecialOffer() {
     let offerEl = document.querySelector("#spec-offer");
 
     offersData.forEach(offer => {
-      let offerDiv =
-        `<div class="item">
-       <div class="products special-product">
-        <div class="product">
-          <div class="product-micro">
-            <div class="row product-micro-row">
-              <div class="col col-xs-5">
-                <div class="product-image">
-                  <div class="image"> <a href="#"> <img src="${offer.url1}" alt=""> </a></div>
-                </div>          
-              </div>              
-              <div class="col col-xs-7">
-                <div class="product-info">
-                  <h3 class="name"><a href="#">${offer.title1}</a></h3>
-                  <div class="rating rateit-small"></div>
-                  <div class="product-price"> <span class="price"> ${offer.price1} </span> </div>
-                </div>
-              </div>        
-            </div>      
-          </div>        
-        </div>
-        <div class="product">
-          <div class="product-micro">
-            <div class="row product-micro-row">
-              <div class="col col-xs-5">
-                <div class="product-image">
-                  <div class="image"> <a href="#"> <img src="${offer.url2}" alt=""> </a>
-                  </div>
-                </div>          
-              </div>              
-              <div class="col col-xs-7">
-                <div class="product-info">
-                  <h3 class="name"><a href="#">${offer.title2}</a></h3>
-                  <div class="rating rateit-small"></div>
-                  <div class="product-price"> <span class="price"> ${offer.price2} </span> </div>                  
-                </div>
-              </div>        
-            </div>     
-          </div>      
-        </div>
-        <div class="product">
-          <div class="product-micro">
-            <div class="row product-micro-row">
-              <div class="col col-xs-5">
-                <div class="product-image">
-                  <div class="image"> <a href="#"> <img src="${offer.url3}" alt="image">
-                    </a> </div>        
-              </div>                
-              </div>        
-              <div class="col col-xs-7">
-                <div class="product-info">
-                  <h3 class="name"><a href="#">${offer.title3}</a></h3>
-                  <div class="rating rateit-small"></div>
-                  <div class="product-price"> <span class="price"> ${offer.price3} </span> </div>
-                </div>
-              </div>        
-            </div>      
-          </div>
-        </div>
-        </div>
-      </div>
-      `
+      let offerDiv = getDealsAndOffersHtml(offer);
+
       offerEl.innerHTML += offerDiv;
     });
 
@@ -316,68 +263,8 @@ function printSpecialDeals() {
     let dealEl = document.querySelector("#spec-deals");
 
     dealsData.forEach(deal => {
-      let dealDiv =
-        `<div class="item">
-       <div class="products special-product">
-        <div class="product">
-          <div class="product-micro">
-            <div class="row product-micro-row">
-              <div class="col col-xs-5">
-                <div class="product-image">
-                  <div class="image"> <a href="#"> <img src="${deal.url1}" alt=""> </a></div>
-                </div>          
-              </div>              
-              <div class="col col-xs-7">
-                <div class="product-info">
-                  <h3 class="name"><a href="#">${deal.title1}</a></h3>
-                  <div class="rating rateit-small"></div>
-                  <div class="product-price"> <span class="price"> ${deal.price1} </span> </div>
-                </div>
-              </div>        
-            </div>      
-          </div>        
-        </div>
-        <div class="product">
-          <div class="product-micro">
-            <div class="row product-micro-row">
-              <div class="col col-xs-5">
-                <div class="product-image">
-                  <div class="image"> <a href="#"> <img src="${deal.url2}" alt=""> </a>
-                  </div>
-                </div>          
-              </div>              
-              <div class="col col-xs-7">
-                <div class="product-info">
-                  <h3 class="name"><a href="#">${deal.title2}</a></h3>
-                  <div class="rating rateit-small"></div>
-                  <div class="product-price"> <span class="price"> ${deal.price2} </span> </div>                  
-                </div>
-              </div>        
-            </div>     
-          </div>      
-        </div>
-        <div class="product">
-          <div class="product-micro">
-            <div class="row product-micro-row">
-              <div class="col col-xs-5">
-                <div class="product-image">
-                  <div class="image"> <a href="#"> <img src="${deal.url3}" alt="image">
-                    </a> </div>        
-              </div>                
-              </div>        
-              <div class="col col-xs-7">
-                <div class="product-info">
-                  <h3 class="name"><a href="#">${deal.title3}</a></h3>
-                  <div class="rating rateit-small"></div>
-                  <div class="product-price"> <span class="price"> ${deal.price3} </span> </div>
-                </div>
-              </div>        
-            </div>      
-          </div>
-        </div>
-        </div>
-      </div>
-      `
+      let dealDiv = getDealsAndOffersHtml(deal);
+
       dealEl.innerHTML += dealDiv;
     });
 
@@ -387,8 +274,6 @@ function printSpecialDeals() {
   http.send();
 }
 
-
-
 function printFeaturedProducts() {
   const http = new XMLHttpRequest();
   http.open('GET', 'http://localhost:3000/featured-products');
@@ -397,47 +282,8 @@ function printFeaturedProducts() {
     let featuredProductsEl = document.querySelector(".new-arriavls .owl-carousel");
 
     featuredProductsData.forEach(product => {
-      let featuredProductDiv =
-        `<div class="item item-carousel">
-        <div class="products">
-          <div class="product">
-            <div class="product-image">
-              <div class="image">
-                <a href="detail.html">
-                  <img src="${product.img1}" alt="">
-                  <img src="${product.img2}" alt="" class="hover-image">
-                </a>
-              </div>
-              <div class="tag new"><span>${product.status}</span></div>
-            </div>
+      let featuredProductDiv = getFeaturedProduct(product);
 
-            <div class="product-info text-left">
-              <h3 class="name"><a href="detail.html">${product.title}</a></h3>
-              <div class="rating rateit-small"></div>
-              <div class="description"></div>
-              <div class="product-price"> <span class="price"> ${product.price} </span> <span
-                  class="price-before-discount">${product.oldPrice}</span> </div>
-            </div>
-
-            <div class="cart clearfix animate-effect">
-              <div class="action">
-                <ul class="list-unstyled">
-                  <li class="add-cart-button btn-group">
-                    <button class="btn btn-primary icon" data-toggle="dropdown" type="button"> <i
-                        class="fa fa-shopping-cart"></i> </button>
-                    <button class="btn btn-primary cart-btn" type="button">Add to cart</button>
-                  </li>
-                  <li class="lnk wishlist"> <a class="add-to-cart" href="detail.html" title="Wishlist"> <i
-                        class="icon fa fa-heart"></i> </a> </li>
-                  <li class="lnk"> <a class="add-to-cart" href="detail.html" title="Compare"> <i
-                        class="fa fa-signal" aria-hidden="true"></i> </a> </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      `
       featuredProductsEl.innerHTML += featuredProductDiv;
     });
 
@@ -446,7 +292,6 @@ function printFeaturedProducts() {
   };
   http.send();
 }
-
 
 function printBlogs() {
   const http = new XMLHttpRequest();
@@ -481,6 +326,201 @@ function printBlogs() {
   http.send();
 }
 
+function printElectronicsAndDigital() {
+  const http = new XMLHttpRequest();
+  http.open('GET', 'http://localhost:3000/electronics-digital');
+  http.onload = () => {
+    let ElectronicsAndDigitalData = JSON.parse(http.responseText);
+    let ElectronicsAndDigitalEl = document.querySelector(".sub-cat");
 
+    ElectronicsAndDigitalData.forEach(item => {
+      let itemDiv =
+        ` <li><a href="#">${item}</a></li>          
+      `
+      ElectronicsAndDigitalEl.innerHTML += itemDiv;
+    });
+
+    state.electronicsAndDigital = true;
+    document.dispatchEvent(new CustomEvent('stateChanged', { detail: state }));
+  };
+  http.send();
+}
+
+function printElectronicsAndDigitalSlide() {
+  const http = new XMLHttpRequest();
+  http.open('GET', 'http://localhost:3000/electronics-digital-slide');
+  http.onload = () => {
+    let slideData = JSON.parse(http.responseText);
+    let slideEl = document.querySelector(".homepage-owl-carousel");
+
+    slideData.forEach(product => {
+      let slideDiv = getFeaturedProductHtml(product);
+
+      slideEl.innerHTML += slideDiv;
+    });
+
+    state.printElectronicsAndDigitalSlideLoaded = true;
+    document.dispatchEvent(new CustomEvent('stateChanged', { detail: state }));
+  };
+  http.send();
+}
+
+function printInfoBoxes() {
+  const http = new XMLHttpRequest();
+  http.open('GET', 'http://localhost:3000/info-boxes');
+  http.onload = () => {
+    let infoBoxesData = JSON.parse(http.responseText);
+    let infoBoxesEl = document.querySelector(".our-features-box ul");
+
+    infoBoxesData.forEach(box => {
+      let boxDiv =
+        ` <li>
+           <div class="feature-box">
+             <div class="${box.iconClass}"></div>
+             <div class="content-blocks">${box.title}</div>
+           </div>
+          </li>          
+      `
+      infoBoxesEl.innerHTML += boxDiv;
+    });
+
+  };
+  http.send();
+}
+
+
+
+function printClientsSlide() {
+  const http = new XMLHttpRequest();
+  http.open('GET', 'http://localhost:3000/clients');
+  http.onload = () => {
+    let clientsData = JSON.parse(http.responseText);
+    let clientsEl = document.querySelector(".advertisement");
+
+    clientsData.forEach(client => {
+      let clientDiv =
+        ` <div class="item">
+        <div class="avatar"><img src="${client.img}" alt="Image"></div>
+           <div class="testimonials"><em>"</em> ${client.description}<em>"</em></div>
+           <div class="clients_author">${client.author} <span>${client.company}</span> </div>      
+          </div>        
+      `
+      clientsEl.innerHTML += clientDiv;
+    });
+
+    state.printClientsSlideLoaded = true;
+    document.dispatchEvent(new CustomEvent('stateChanged', { detail: state }));
+
+  };
+  http.send();
+}
+
+// ეს 2 ფუნქცია აბრუნებს html-ის სრინგ ფორმას, რომელსაც რამდენიმეგან ვიყენებ
+function getFeaturedProductHtml(product) {
+  return `<div class="item item-carousel">
+  <div class="products">
+    <div class="product">
+      <div class="product-image">
+        <div class="image">
+          <a href="detail.html">
+            <img src="${product.img1}" >
+            <img src="${product.img2}" class="hover-image">
+          </a>
+        </div>
+        <div class="tag new"><span>${product.status}</span></div>
+      </div>
+
+      <div class="product-info text-left">
+        <h3 class="name"><a href="detail.html">${product.title}</a></h3>
+        <div class="rating rateit-small"></div>
+        <div class="description"></div>
+        <div class="product-price"> <span class="price"> ${product.price} </span> <span
+            class="price-before-discount">${product.oldPrice}</span> </div>
+      </div>
+
+      <div class="cart clearfix animate-effect">
+        <div class="action">
+          <ul class="list-unstyled">
+            <li class="add-cart-button btn-group">
+              <button class="btn btn-primary icon" data-toggle="dropdown" type="button"> <i
+                  class="fa fa-shopping-cart"></i> </button>
+              <button class="btn btn-primary cart-btn" type="button">Add to cart</button>
+            </li>
+            <li class="lnk wishlist"> <a class="add-to-cart" href="detail.html" title="Wishlist"> <i
+                  class="icon fa fa-heart"></i> </a> </li>
+            <li class="lnk"> <a class="add-to-cart" href="detail.html" title="Compare"> <i
+                  class="fa fa-signal" aria-hidden="true"></i> </a> </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`
+}
+
+function getDealsAndOffersHtml(item) {
+  return `<div class="item">
+  <div class="products special-product">
+   <div class="product">
+     <div class="product-micro">
+       <div class="row product-micro-row">
+         <div class="col col-xs-5">
+           <div class="product-image">
+             <div class="image"> <a href="#"> <img src="${item.url1}" alt=""> </a></div>
+           </div>          
+         </div>              
+         <div class="col col-xs-7">
+           <div class="product-info">
+             <h3 class="name"><a href="#">${item.title1}</a></h3>
+             <div class="rating rateit-small"></div>
+             <div class="product-price"> <span class="price"> ${item.price1} </span> </div>
+           </div>
+         </div>        
+       </div>      
+     </div>        
+   </div>
+   <div class="product">
+     <div class="product-micro">
+       <div class="row product-micro-row">
+         <div class="col col-xs-5">
+           <div class="product-image">
+             <div class="image"> <a href="#"> <img src="${item.url2}" alt=""> </a>
+             </div>
+           </div>          
+         </div>              
+         <div class="col col-xs-7">
+           <div class="product-info">
+             <h3 class="name"><a href="#">${item.title2}</a></h3>
+             <div class="rating rateit-small"></div>
+             <div class="product-price"> <span class="price"> ${item.price2} </span> </div>                  
+           </div>
+         </div>        
+       </div>     
+     </div>      
+   </div>
+   <div class="product">
+     <div class="product-micro">
+       <div class="row product-micro-row">
+         <div class="col col-xs-5">
+           <div class="product-image">
+             <div class="image"> <a href="#"> <img src="${item.url3}" alt="image">
+               </a> </div>        
+         </div>                
+         </div>        
+         <div class="col col-xs-7">
+           <div class="product-info">
+             <h3 class="name"><a href="#">${item.title3}</a></h3>
+             <div class="rating rateit-small"></div>
+             <div class="product-price"> <span class="price"> ${item.price3} </span> </div>
+           </div>
+         </div>        
+       </div>      
+     </div>
+   </div>
+   </div>
+ </div>
+ `
+}
 
 
