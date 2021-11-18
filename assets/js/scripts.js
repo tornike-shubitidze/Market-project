@@ -1,9 +1,11 @@
+"use strict";
+
 document.addEventListener('stateChanged', function (e) {
-    "use strict";
 
     /*===================================================================================*/
     /*	OWL CAROUSEL
     /*===================================================================================*/
+
     if (e.detail.printFirstSlideLoaded) {
         jQuery(function () {
             var dragging = true;

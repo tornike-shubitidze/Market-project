@@ -11,7 +11,7 @@ var state = {
 };
 
 (function () {
-  // getCategories();
+  getCategories();
   getWideBannersImgs();
   printFirstSlide();
   printProductTags();
@@ -31,70 +31,81 @@ function getCategories() {
   http.open('GET', 'http://localhost:3000/categories');
   http.onload = () => {
     let categories = JSON.parse(http.responseText);
-    let categoriNamesDiv = document.querySelector('.megamenu-horizontal .nav');
+    let categoryNamesDiv = document.querySelector('.megamenu-horizontal .nav');
 
-    function doSomething(subCategories) {
-      return `<a href="#"></a>
-            <a href="#">test</a>
-            <a href="#">test</a>
-            <a href="#">test</a>
-            <a href="#">test</a>
-            <a href="#">test</a>
-            <a href="#">test</a>
-            <a href="#">test</a>`;
+    function printSubCategoriesImg(item) {
+      if (item.length == 0 || item.length > 24) {
+        return ""
+      } else {
+        return `<div class="dropdown-banner-holder"> <a href="#"><img alt=""
+                    src="assets/images/banners/banner-side.png" /></a> </div>
+                </div>`
+      }
     }
 
+    function printSubMenu(subCategories) {
+      if (subCategories.length == 0) {
+        return ""
+      } else {
+        return `
+      <ul class="dropdown-menu mega-menu">
+          <li class="yamm-content">
+              <div class="row">
+                  ${printSubCategories(subCategories)}
+                  ${printSubCategoriesImg(subCategories)}
+              </div>
+          </li>
+      </ul>`;
+      }
+    }
+
+    function printSubCategories(subCategories) {
+      let subNames = "";
+      let subCatArr = [];
+
+      let size = subCategories.length / 2 > 10 ? 8 : 10
+
+      for (let i = 0; i < subCategories.length; i += size) {
+        let chunk = subCategories.slice(i, i + size);
+        subCatArr.push(chunk);
+      }
+
+      subCatArr.forEach(arr => {
+        let chunkEl = `
+                        <div class="col-sm-12 col-md-3">
+                            <ul class="links list-unstyled">
+                             ${printChunkList(arr)}
+                            </ul>
+                        </div>
+        `;
+
+        function printChunkList(array) {
+          let nameLists = "";
+          array.forEach(categoryName => {
+            let catName = `<li><a href="#">${categoryName}</a></li>`;
+            nameLists += catName;
+
+          })
+          return nameLists;
+        }
+        subNames += chunkEl
+      })
+      return subNames;
+    }
+
+
     categories.forEach(category => {
-      let categoryListEl = document.createElement('li');
-      categoryListEl.innerHTML = `<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-            <i class="icon fa ${category.icon}"></i>
-            ${category.name}
-            </a>
-            <ul class="dropdown-menu mega-menu">
-                <li class="yamm-content">
-                  <div class="row sub-menu">
-
-                    <div class="col-sm-12 col-md-3">
-                      <ul class="links list-unstyled">
-                        <li>
-                          ${doSomething(category.subCategories)}
-                        </li>
-                      </ul>
-                    </div>
-
-                    <div class="col-sm-12 col-md-3">
-                      <ul class="links list-unstyled">
-                        <li>
-                        ${doSomething()}
-                        </li>
-                      </ul>
-                    </div>
-
-                    <div class="col-sm-12 col-md-3">
-                      <ul class="links list-unstyled">
-                        <li>
-                          ${doSomething()}
-                        </li>
-                      </ul>
-                    </div>
-
-                    <div class="col-sm-12 col-md-3">
-                      <ul class="links list-unstyled">
-                        <li>
-                        ${doSomething()}
-                        </li>
-                      </ul>
-                    </div>
-                    
-                  </div>
-                </li>
-              </ul>`;
-
-      categoriNamesDiv.appendChild(categoryListEl);
+      let categoryListEl =
+        `
+        <li class="dropdown menu-item">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <i class="icon fa ${category.icon}" aria-hidden="true"></i>${category.name}</a>
+            ${printSubMenu(category.subCategories)}           
+        </li>
+        `;
+      categoryNamesDiv.innerHTML += categoryListEl;
     });
 
-    let catSubEl = document.querySelectorAll('.sub-clothings li a');
-    clothingsSubEl.forEach((subName, i) => { subName.innerText = subClothesArray[i] });
   }
   http.send();
 }
@@ -282,7 +293,7 @@ function printFeaturedProducts() {
     let featuredProductsEl = document.querySelector(".new-arriavls .owl-carousel");
 
     featuredProductsData.forEach(product => {
-      let featuredProductDiv = getFeaturedProduct(product);
+      let featuredProductDiv = getFeaturedProductHtml(product);
 
       featuredProductsEl.innerHTML += featuredProductDiv;
     });
@@ -388,14 +399,12 @@ function printInfoBoxes() {
   http.send();
 }
 
-
-
 function printClientsSlide() {
   const http = new XMLHttpRequest();
   http.open('GET', 'http://localhost:3000/clients');
   http.onload = () => {
     let clientsData = JSON.parse(http.responseText);
-    let clientsEl = document.querySelector(".advertisement");
+    let clientsEl = document.querySelector("#advertisement");
 
     clientsData.forEach(client => {
       let clientDiv =
@@ -522,5 +531,3 @@ function getDealsAndOffersHtml(item) {
  </div>
  `
 }
-
-

@@ -2,7 +2,7 @@
   "categories": [
     {
       "name": "Clothings",
-      "icon": "fa-envira",
+      "icon": "fa-shopping-bag",
       "subCategories": [
         "Dresses",
         "Shoes",
@@ -42,14 +42,35 @@
     },
     {
       "name": "Electronics",
-      "icon": "fa-envira",
-      "subCategories": "Gaming,Laptop Skins,Apple,Dell,Lenovo,Microsoft,Asus,Adapters,Batteries,Cooling Pads,Routers & Modems,CPUs and Processors,PC Gaming Store,Graphics Cards,Components,Webcam,Memory (RAM),Motherboards,Keyboards,Headphones",
-      "containsImage": false,
-      "imageUrl": ""
+      "icon": "fa-laptop",
+      "subCategories": [
+        "Gaming",
+        "Laptop Skins",
+        "Apple",
+        "Dell",
+        "Lenovo",
+        "Microsoft",
+        "Asus",
+        "Adapters",
+        "Batteries",
+        "Cooling Pads",
+        "Routers & Modems",
+        "CPUs and Processors",
+        "PC Gaming Store",
+        "Graphics Cards",
+        "Components",
+        "Webcam",
+        "Memory (RAM)",
+        "Motherboards",
+        "Keyboards",
+        "Headphones"
+      ],
+      "containsImage": true,
+      "imageUrl": "assets/images/banners/banner-side.png"
     },
     {
       "name": "Shoes",
-      "icon": "fa-envira",
+      "icon": "fa-paw",
       "subCategories": [
         "Dresses",
         "Shoes",
@@ -89,12 +110,35 @@
     },
     {
       "name": "Watches",
-      "icon": "fa-envira",
-      "subCategories": "Gaming,Laptop Skins,Apple,Dell,Lenovo,Microsoft,Asus,Adapters,Batteries,Cooling Pads,Routers & Modems,CPUs and Processors,PC Gaming Store,Graphics Cards,Components,Webcam,Memory (RAM),Motherboards,Keyboards,Headphones"
+      "icon": "fa-clock-o",
+      "subCategories": [
+        "Gaming",
+        "Laptop Skins",
+        "Apple",
+        "Dell",
+        "Lenovo",
+        "Microsoft",
+        "Asus",
+        "Adapters",
+        "Batteries",
+        "Cooling Pads",
+        "Routers & Modems",
+        "CPUs and Processors",
+        "PC Gaming Store",
+        "Graphics Cards",
+        "Components",
+        "Webcam",
+        "Memory (RAM)",
+        "Motherboards",
+        "Keyboards",
+        "Headphones"
+      ],
+      "containsImage": true,
+      "imageUrl": "assets/images/banners/banner-side.png"
     },
     {
       "name": "Jewellery",
-      "icon": "fa-envira",
+      "icon": "fa-diamond",
       "subCategories": [
         "Dresses",
         "Shoes",
@@ -134,29 +178,50 @@
     },
     {
       "name": "Health and Beauty",
-      "icon": "fa-envira",
-      "subCategories": "Gaming,Laptop Skins,Apple,Dell,Lenovo,Microsoft,Asus,Adapters,Batteries,Cooling Pads,Routers & Modems,CPUs and Processors,PC Gaming Store,Graphics Cards,Components,Webcam,Memory (RAM),Motherboards,Keyboards,Headphones",
-      "containsImage": false,
-      "imageUrl": ""
+      "icon": "fa-heartbeat",
+      "subCategories": [
+        "Gaming",
+        "Laptop Skins",
+        "Apple",
+        "Dell",
+        "Lenovo",
+        "Microsoft",
+        "Asus",
+        "Adapters",
+        "Batteries",
+        "Cooling Pads",
+        "Routers & Modems",
+        "CPUs and Processors",
+        "PC Gaming Store",
+        "Graphics Cards",
+        "Components",
+        "Webcam",
+        "Memory (RAM)",
+        "Motherboards",
+        "Keyboards",
+        "Headphones"
+      ],
+      "containsImage": true,
+      "imageUrl": "assets/images/banners/banner-side.png"
     },
     {
       "name": "Kids and Babies",
-      "icon": "fa-envira",
-      "subCategories": "",
+      "icon": "fa-paper-plane",
+      "subCategories": [],
       "containsImage": false,
       "imageUrl": ""
     },
     {
       "name": "Sports",
-      "icon": "fa-envira",
-      "subCategories": "",
+      "icon": "fa-futbol-o",
+      "subCategories": [],
       "containsImage": false,
       "imageUrl": ""
     },
     {
       "name": "Home and Garden",
       "icon": "fa-envira",
-      "subCategories": "",
+      "subCategories": [],
       "containsImage": false,
       "imageUrl": ""
     }
