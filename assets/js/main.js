@@ -50,9 +50,12 @@ function printTopMenu() {
                                  ${nameLists}                                     
                               </ul>
                        </div>`;
-        })
+        });
 
-        menuItems += `<li class="dropdown"> <a href="home.html" data-hover="dropdown" class="dropdown-toggle" data-toggle="dropdown">${category.name}</a>
+        let imageClass = category.containsImage ? 'yamm mega-menu' : '';
+        let dealAction = category.action !== "" ? `<span class="menu-label ${category.action}-menu hidden-xs">${category.action.toUpperCase()}</span>` : '';
+
+        menuItems += `<li class="dropdown ${imageClass}"> <a href="home.html" data-hover="dropdown" class="dropdown-toggle" data-toggle="dropdown">${category.name} ${dealAction}</a>
         ${category.subCategories.length == 0 ? "" : `<ul class="dropdown-menu container">
                                                      <li>
                                                         <div class="yamm-content ">

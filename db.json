@@ -1,7 +1,7 @@
 {
   "top-menu": [
     {
-      "name": "Clothings",
+      "name": "Clothing",
       "subCategories": [
         {
           "title": "Men",
@@ -53,7 +53,8 @@
         }
       ],
       "containsImage": true,
-      "imageUrl": "assets/images/banners/top-menu-banner.jpg"
+      "imageUrl": "assets/images/banners/top-menu-banner.jpg",
+      "action": ""
     },
     {
       "name": "Electronics",
@@ -120,42 +121,48 @@
         }
       ],
       "containsImage": true,
-      "imageUrl": "assets/images/banners/top-menu-banner1.jpg"
+      "imageUrl": "assets/images/banners/top-menu-banner1.jpg",
+      "action": "hot"
     },
     {
       "name": "Health & Beauty ",
       "subCategories": [],
       "containsImage": false,
-      "imageUrl": ""
+      "imageUrl": "",
+      "action": "new"
     },
     {
       "name": "Watches",
       "subCategories": [],
       "containsImage": false,
-      "imageUrl": ""
+      "imageUrl": "",
+      "action": ""
     },
     {
       "name": "Jewellery",
       "subCategories": [],
       "containsImage": false,
-      "imageUrl": ""
+      "imageUrl": "",
+      "action": ""
     },
     {
       "name": "Shoes",
       "subCategories": [],
       "containsImage": false,
-      "imageUrl": ""
+      "imageUrl": "",
+      "action": ""
     },
     {
       "name": "Kids & Girls",
       "subCategories": [],
       "containsImage": false,
-      "imageUrl": ""
+      "imageUrl": "",
+      "action": ""
     }
   ],
   "categories": [
     {
-      "name": "Clothings",
+      "name": "Clothing",
       "icon": "fa-shopping-bag",
       "subCategories": [
         "Dresses",
