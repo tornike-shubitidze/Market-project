@@ -1,4 +1,158 @@
 {
+  "top-menu": [
+    {
+      "name": "Clothings",
+      "subCategories": [
+        {
+          "title": "Men",
+          "list": [
+            "Dresses",
+            "Shoes",
+            "Jackets",
+            "Sunglasses",
+            "Sport Wear",
+            "Blazers",
+            "Shirts"
+          ]
+        },
+        {
+          "title": "Women",
+          "list": [
+            "Handbags",
+            "Jwellery",
+            "Swimwear",
+            "Tops",
+            "Flats",
+            "Shoes",
+            "Winter Wear"
+          ]
+        },
+        {
+          "title": "Boys",
+          "list": [
+            "Toys & Games",
+            "Jeans",
+            "Shirts",
+            "Shoes",
+            "School Bags",
+            "Lunch Box",
+            "Footwear"
+          ]
+        },
+        {
+          "title": "Girls",
+          "list": [
+            "Shorts",
+            "Dresses",
+            "Jwellery",
+            "Bags",
+            "Night Dress",
+            "Swim Wear",
+            "Toys"
+          ]
+        }
+      ],
+      "containsImage": true,
+      "imageUrl": "assets/images/banners/top-menu-banner.jpg"
+    },
+    {
+      "name": "Electronics",
+      "subCategories": [
+        {
+          "title": "Laptops",
+          "list": [
+            "Gaming",
+            "Laptop Skins",
+            "Apple",
+            "Dell",
+            "Lenovo",
+            "Microsoft",
+            "Asus",
+            "Adapters",
+            "Batteries",
+            "Cooling Pads"
+          ]
+        },
+        {
+          "title": "Desktops",
+          "list": [
+            "Routers & Modems",
+            "CPUs and Processors",
+            "PC Gaming Store",
+            "Graphics Cards",
+            "Components",
+            "Webcam",
+            "Memory (RAM)",
+            "Motherboards",
+            "Keyboards",
+            "Headphones"
+          ]
+        },
+        {
+          "title": "Cameras",
+          "list": [
+            "Accessories",
+            "Binoculars",
+            "Telescopes",
+            "Camcorders",
+            "Digital",
+            "Film Cameras",
+            "Flashes",
+            "Lenses",
+            "Surveillance",
+            "Tripods"
+          ]
+        },
+        {
+          "title": "Mobile Phones",
+          "list": [
+            "Apple",
+            "Samsung",
+            "Lenovo",
+            "Motorola",
+            "LeEco",
+            "Asus",
+            "Acer",
+            "Accessories",
+            "Headphones",
+            "Memory Cards"
+          ]
+        }
+      ],
+      "containsImage": true,
+      "imageUrl": "assets/images/banners/top-menu-banner1.jpg"
+    },
+    {
+      "name": "Health & Beauty ",
+      "subCategories": [],
+      "containsImage": false,
+      "imageUrl": ""
+    },
+    {
+      "name": "Watches",
+      "subCategories": [],
+      "containsImage": false,
+      "imageUrl": ""
+    },
+    {
+      "name": "Jewellery",
+      "subCategories": [],
+      "containsImage": false,
+      "imageUrl": ""
+    },
+    {
+      "name": "Shoes",
+      "subCategories": [],
+      "containsImage": false,
+      "imageUrl": ""
+    },
+    {
+      "name": "Kids & Girls",
+      "subCategories": [],
+      "containsImage": false,
+      "imageUrl": ""
+    }
+  ],
   "categories": [
     {
       "name": "Clothings",
